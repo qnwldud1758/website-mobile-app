@@ -1,0 +1,19 @@
+[build]
+  publish = "public"
+
+# Short install link: /install opens the app-install guide on the homepage
+[[redirects]]
+  from = "/install"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+    Service-Worker-Allowed = "/"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
